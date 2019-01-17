@@ -10,14 +10,14 @@ import {
 
 } from './constant';
 
-import GET_MOVIE_URL from '../../../config/config';
-import GET_ACTOR_URL from '../../../config/config';
-import ADD_ACTOR_URL from '../../../config/config';
-import ADD_MOVIE_URL from '../../../config/config';
-import DELETE_ACTOR_URL from '../../../config/config';
-import DELETE_MOVIE_URL from '../../../config/config';
-import EDIT_ACTOR_URL from '../../../config/config';
-import EDIT_MOVIE_URL from '../../../config/config'; 
+import {GET_MOVIE_URL} from '../../config/config';
+import {GET_ACTOR_URL} from '../../config/config';
+import {ADD_ACTOR_URL} from '../../config/config';
+import {ADD_MOVIE_URL} from '../../config/config';
+import {DELETE_ACTOR_URL} from '../../config/config';
+import {DELETE_MOVIE_URL} from '../../config/config';
+import {EDIT_ACTOR_URL} from '../../config/config';
+import {EDIT_MOVIE_URL} from '../../config/config'; 
 
 
 export const getMovies = () => {

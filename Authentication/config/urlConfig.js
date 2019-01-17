@@ -1,5 +1,5 @@
 const AUTH_URL = 'http://localhost:4002';
-let MONGO_URL = 'mongodb://localhost:27017/';
+let MONGO_URL = 'mongodb://localhost:27017/tarunMongoDB';
 const DB_NAME = 'tarunMongoDB';
 
 if (process.env.MODE === 'prod') {

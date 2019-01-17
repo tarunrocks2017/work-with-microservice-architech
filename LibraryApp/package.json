@@ -8,7 +8,7 @@
     "watch-lint": "npm run lint & esw -w *.js",
     "test": "DB_NAME=testDB nyc --reporter=lcov mocha tests/testActor/*.js tests/testMovie/*.js tests/testUser/*.js & esw -w tests/testActor/*.js tests/testMovie/*.js tests/testUser/*.js",
     "lint-test": "npm run lint & npm test & esw -w *.js",
-    "start": "MODE=prod nodemon index.js",
+    "start": "nodemon index.js",
     "createDataBase": "node SqlFiles/createDataBase.js",
     "connect": "node SqlFiles/Connection.js",
     "createTable": "node SqlFiles/createtable.js"

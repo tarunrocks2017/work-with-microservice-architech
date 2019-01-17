@@ -5,6 +5,8 @@ const app = express();
 
 const bodyparser = require('body-parser');
 
+app.use(express.static(`${__dirname}/public`));
+
 const movieRoute = require('./movies/movieRouter');
 const actorRoute = require('./actors/actorRouter');
 

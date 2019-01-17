@@ -60,7 +60,7 @@ class AddMovieForm extends React.Component {
         }
         return (
             <section className="container-fluid">
-            <img src={require('../../images/form-background-01.jpg')} alt="movieimage" />
+            <img src='./images/form-background-01.jpg' alt="movieimage" />
             <div className="form-div opacity"></div>
             <div className="form-div">
                     <form className="add-movie-form d-flex" onSubmit={this.handleSubmit}>
