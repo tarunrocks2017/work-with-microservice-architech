@@ -92,8 +92,6 @@ class AddActorForm extends React.Component {
 }
 
 const mapStateProps = (state) => {
-    console.log("in addactorform");
-    console.log("when you hit the addform"+state.actors);
     return {
         movies:state.movies,
     }

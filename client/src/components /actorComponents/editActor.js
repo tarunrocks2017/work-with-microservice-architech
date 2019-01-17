@@ -4,7 +4,6 @@ import Options from '../movieComponents/SelectMovieComponent';
 import Redirect from 'react-router-dom/Redirect';
 import {connect} from 'react-redux';
 import {editActor} from '../../Store/ReduxActions/actions';
-//import actor from './actor';
 
 class EditActorForm extends React.Component {
     constructor(props){
@@ -23,11 +22,9 @@ class EditActorForm extends React.Component {
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        console.log("i am constructor");
     }
 
     handleChange(e) {
-        console.log(e.target.value);
         this.setState({
                 [e.target.name]:e.target.value,
         })
@@ -111,8 +108,6 @@ class EditActorForm extends React.Component {
 }
 
 const mapStateProps = (state) => {
-    console.log("in addactorform");
-    console.log("when you hit the addform"+state.actors);
     return {
         movies:state.movies,
         actors:state.actors,

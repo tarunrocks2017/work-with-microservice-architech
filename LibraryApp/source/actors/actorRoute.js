@@ -22,7 +22,6 @@ router.get('/:id', async (req, res) => {
     const url = `${config.MYSQL_ACTOR_URL}${id}`;
     const response = await fetch(url, { method: 'GET' });
     const result = await response.json();
-    console.log(result[0]);
     if (result.length === 0) res.render('pages/error', { msg: '500 id not found' });
     else res.render('pages/workers-info', { isActive: req.session.isActive, workerObj: result });
   } catch (err) {

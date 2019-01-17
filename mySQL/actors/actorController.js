@@ -79,7 +79,6 @@ async function removeActorById(id) {
 
 async function addActor(actorObject) {
   try {
-    console.log('now here also request come');
     const connection = await con.getConnection();
     const actorInfo = [
       actorObject.actorname,
@@ -90,10 +89,8 @@ async function addActor(actorObject) {
     ];
     const formatQuery = await connection.format(INSERT_INTO_ACTOR, actorInfo);
     const result = await connection.query(formatQuery);
-    console.log(result);
     return result;
   } catch (error) {
-    console.log('in catch block');
     return error;
   }
 }
@@ -101,7 +98,6 @@ async function addActor(actorObject) {
 async function updateActorById(id, actorObject) {
   try {
     const connection = await con.getConnection();
-    console.log('try in update');
     const actorInfo = [
       actorObject.actorname,
       actorObject.movieid,
@@ -114,8 +110,6 @@ async function updateActorById(id, actorObject) {
     const result = await connection.query(formatQuery);
     return result;
   } catch (error) {
-    console.log('catch in update');
-    console.log(error);
     return error;
   }
 }

@@ -15,13 +15,9 @@ class movieContent extends React.Component {
     handleDelete(e) {
         const id = e.target.id ;
         this.props.deleteMovie(id);
-        console.log("i am in handle delete");
     }
 
     render() {
-        const {history} = this.props ;
-        console.log(history);
-        console.log(this.props.movies);
         return (
                 <section className="container-fluid d-flex">
                 <div className="movie-operation">
@@ -53,7 +49,6 @@ class movieContent extends React.Component {
     }
 }
 const mapMovieStateProps = (state) => {
-    console.log("i come inside every time");
     return {
         movies:state.movies
     }

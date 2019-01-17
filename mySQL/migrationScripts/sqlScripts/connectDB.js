@@ -1,11 +1,12 @@
 const sql = require('promise-mysql');
+const config = require('../../config/config');
 
 async function getConnection() {
   const connection = await sql.createConnection({
-    host: 'localhost',
-    user: 'tarunharsh',
-    password: 'TarunHarsh@123',
-    database: process.env.DB_NAME || 'tarunDB',
+    host: config.HOST,
+    user: config.USERNAME,
+    password: config.PASS,
+    database: process.env.DB_NAME || config.DB_NAME,
   });
   return connection;
 }

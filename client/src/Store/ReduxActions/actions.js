@@ -10,11 +10,21 @@ import {
 
 } from './constant';
 
+import GET_MOVIE_URL from '../../../config/config';
+import GET_ACTOR_URL from '../../../config/config';
+import ADD_ACTOR_URL from '../../../config/config';
+import ADD_MOVIE_URL from '../../../config/config';
+import DELETE_ACTOR_URL from '../../../config/config';
+import DELETE_MOVIE_URL from '../../../config/config';
+import EDIT_ACTOR_URL from '../../../config/config';
+import EDIT_MOVIE_URL from '../../../config/config'; 
+
+
 export const getMovies = () => {
     console.log("in getMovies");
     return async dispatch => {
-        const url = "http://localhost:8080/movies";
-        const response = await fetch(url);
+       // const url = "http://localhost:8080/movies";
+        const response = await fetch(GET_MOVIE_URL);
         const result = await response.json();
         console.log(result);
         dispatch({
@@ -26,8 +36,8 @@ export const getMovies = () => {
 export const getActors = () => {
     console.log("in getActors");
     return async dispatch => {
-        const url = "http://localhost:8080/actors";
-        const response = await fetch(url);
+        // const url = "http://localhost:8080/actors";
+        const response = await fetch(GET_ACTOR_URL);
         const result = await response.json();
         console.log(result);
         dispatch({
@@ -39,8 +49,8 @@ export const getActors = () => {
 export const addActors = (actor) => {
     console.log(actor);
     return async dispatch => {
-        const url = "http://localhost:8080/addActor";
-        const response = await fetch(url,{method:'POST',mode:'cors',
+       // const url = "http://localhost:8080/addActor";
+        const response = await fetch(ADD_ACTOR_URL,{method:'POST',mode:'cors',
           headers:{"Content-Type": "application/json"},
           body: JSON.stringify({
             actorname:actor.actorname,
@@ -61,8 +71,8 @@ export const addActors = (actor) => {
 export const addMovies = (movie) => {
     console.log("i am adding the movie in db");
     return async dispatch => {
-        const url = "http://localhost:8080/addMovie";
-        const response = await fetch(url,{method:'POST',mode:'cors',
+      // const url = "http://localhost:8080/addMovie";
+        const response = await fetch(ADD_MOVIE_URL,{method:'POST',mode:'cors',
           headers:{"Content-Type": "application/json"},
           body: JSON.stringify({
             moviename:movie.moviename,
@@ -84,7 +94,7 @@ export const addMovies = (movie) => {
 export const deleteMovie = (movieid) => {
     console.log("i am in delete movie ");
     return async dispatch => {
-        const url = "http://localhost:8080/deleteMovie/"+movieid;
+        const url = DELETE_MOVIE_URL+""+movieid;
     
         const response = await fetch(url, {
             method:'GET',
@@ -102,7 +112,7 @@ export const deleteMovie = (movieid) => {
 export const deleteActor = (actorid) => {
     console.log("i am in deltee actor") ;
     return async dispatch => {
-        const url = "http://localhost:8080/deleteActor/"+actorid;
+        const url = DELETE_ACTOR_URL+""+actorid;
 
         const response = await fetch(url, {
             method: "DELETE",
@@ -121,9 +131,9 @@ export const editActor = (state) => {
     console.log("i am in edit actor");
 
     return async dispatch => {
-        const url = "http://localhost:8080/updateActor";
+        //const url = "http://localhost:8080/updateActor";
 
-        const response = await fetch(url, {
+        const response = await fetch(EDIT_ACTOR_URL, {
             method: "PUT",
             mode: "cors",
             headers:{"Content-Type": "application/json"},
@@ -149,9 +159,9 @@ export const editActor = (state) => {
 
 export const editMovie = (state) => {
     return async dispatch => {
-        const url = "http://localhost:8080/updateMovie";
+       // const url = "http://localhost:8080/updateMovie";
 
-        const response = await fetch(url, {
+        const response = await fetch(EDIT_MOVIE_URL, {
             method: "PUT",
             mode: "cors",
             headers:{"Content-Type": "application/json"},

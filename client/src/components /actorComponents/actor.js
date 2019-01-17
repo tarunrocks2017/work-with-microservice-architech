@@ -1,5 +1,4 @@
 import React from 'react';
-import WebFooter from '../commonComponents/footer';
 import '../../actor.css';
 import ActorComponent from './actorComponent';
 import {Link} from 'react-router-dom';
@@ -65,8 +64,6 @@ class ActorContent extends React.Component {
     }
 }
 const mapActorStateProps = (state) => {
-    console.log("i come inside again");
-    console.log(state);
     return {
         actors:state.actors,
         movies:state.movies,
