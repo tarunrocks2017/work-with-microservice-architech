@@ -8,7 +8,7 @@ const url= {
      EDIT_ACTOR_URL : 'http://localhost:8080/updateActor',
      EDIT_MOVIE_URL :'http://localhost:8080/updateMovie',
 }
-if(process.env.MODE === 'prod') {
+if(process.env.NODE_ENV === 'production') {
      url.GET_MOVIE_URL = `http://${process.env.IP}:8080/movies`;
      url.GET_ACTOR_URL = `http://${process.env.IP}:8080/actors`;
      url.ADD_ACTOR_URL = `http://${process.env.IP}:8080/addActor`;
