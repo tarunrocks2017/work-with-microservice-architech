@@ -3,8 +3,8 @@ let MYSQL_MOVIE_URL = 'http://localhost:8080/movies';
 const TEST_URL = 'http://localhost:4001';
 
 if (process.env.MODE === 'prod') {
-  MYSQL_ACTOR_URL = 'http://18.218.23.234/actors';
-  MYSQL_MOVIE_URL = 'http://18.218.23.234/movies';
+  MYSQL_ACTOR_URL = `http://${process.env.IP}/actors`;
+  MYSQL_MOVIE_URL = `http://${process.env.IP}/movies`;
 }
 
 module.exports = {
