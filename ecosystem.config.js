@@ -20,6 +20,7 @@ module.exports = {
 
 	deploy : {
 		production : {
+			key:"adminAPI.pem",
 			user : "ubuntu",
 			host : "18.222.132.13",
 			ref  : "origin/master",
